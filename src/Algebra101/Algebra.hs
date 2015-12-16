@@ -1,18 +1,67 @@
-{-# LANGUAGE ConstraintKinds #-}
+{-# LANGUAGE ConstraintKinds, TypeFamilies #-}
+-----------------------------------------------------------------------------
+-- |
+-- Module      :  Algebra101.Algebra
+-- Copyright   :  (c) Marco Zocca 2015
+-- License     :  BSD3
+-- Maintainer  :  zocca . marco . gmail . com
+-- Stability   :  experimental
+--
+-- | Some experiments with algebraic type classes, inspired by SubHask
+--
+-----------------------------------------------------------------------------
 module Algebra101.Algebra where
 
--- | POSet : "meet" semilattice
-
-class Eq a => POrd_ a where
-  inf :: a -> a -> a
-
-  (<=) :: a -> a -> Bool
-  x <= y = inf x y == x
-
-  (<) :: a -> a -> Bool
-  x < y = inf x y == x && x /= y
+import qualified Prelude as P
+import GHC.Types
 
 
-type POrd a = (Eq a, POrd_ a)
+-- | relational classes
+
+
+
+
+
+
+
+-- | Partially ordered sets
+-- -- properties :
+-- commutative
+-- associative
+-- idempotent
+
+-- "meet" semilattice : every pair of elements possesses an infimum, e.g. a greatest lower bound
+
+-- class Eq a => POrd_ a where
+--   inf :: a -> a -> a
+
+--   (<=) :: a -> a -> Bool
+--   x <= y = inf x y == x
+
+--   (<) :: a -> a -> Bool
+--   x < y = inf x y == x && x /= y
+
+
+-- type POrd a = (Eq a, POrd_ a)
+
+
+-- lawPOrdCommutative :: POrd a => a -> a -> Bool
+-- lawPOrdCommutative x y = inf x y == inf y x
+
+-- lawPOrdAssociative :: POrd a => a -> a -> a -> Bool
+-- lawPOrdAssociative x y z = inf (inf x y) z == inf x (inf y z)
+
+-- lawPOrdIdempotent :: POrd a => a -> Bool
+-- lawPOrdIdempotent x = inf x x == x
+
+
+-- -- | Lower-bounded semilattices
+
+-- class POrd a => MinBound_ a where
+--   minBound :: a
+
+-- type MinBound a = (MinBound_ a, Eq a)
+
+-- lawMinBoundInf x = inf x minBound == minBound
 
 
