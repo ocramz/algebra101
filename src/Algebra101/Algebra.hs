@@ -18,7 +18,59 @@ import GHC.Types
 
 -- | relational classes
 
+-- Eq
+-- POrd
+-- MinBound
+-- Lattice
+-- Graded
+-- Enum
+-- Ord
+-- Bounded
+-- Complemented
+-- Heyting
 
+-- | numeric classes
+
+-- Semigroup
+-- SemigroupAction
+-- Monoid
+-- Cancellative
+-- Group
+-- Rg
+-- Rig
+-- Ring
+-- Integral
+-- Field
+-- OrdField
+-- BoundedField
+-- RationalField
+-- QuotientField
+-- ExpRing
+-- ExpField
+-- Real
+
+-- Normed
+-- Cone
+-- Module
+-- FreeModule
+-- FiniteModule
+-- VectorSpace
+-- Riesz
+-- Banach
+-- Hilbert
+-- Bregman (?) -- needs tangent operator
+-- Metric
+
+-- TensorAlgebra
+
+
+-- | set-like classes
+
+-- Constructible
+-- Foldable
+-- Topology (?)
+-- IxContainer
+-- Sliceable
 
 
 
